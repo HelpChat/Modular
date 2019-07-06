@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'io.franzbecker.gradle-lombok' version '3.1.0' // do we want lombok?
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+}
+
+group 'at.helpch'
+version '1.0.0'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+dependencies {
+    compile 'com.google.inject:guice:+'
+    compileOnly 'org.spigotmc:spigot-api:1.14.3-R0.1-SNAPSHOT'
+}
+
+lombok {
+    version = '1.18.8'
+    sha256 = ""
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
