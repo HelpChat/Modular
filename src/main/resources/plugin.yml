@@ -1,0 +1,5 @@
+name: Modular
+version: @version@
+website: https://helpch.at
+authors: [PiggyPiglet, Max Berkelmans]
+main: at.helpch.modular.Modular
