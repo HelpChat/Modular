@@ -23,7 +23,7 @@ dependencies {
     compile('com.google.inject:guice:+') {
         exclude group: 'com.google.guava', module: "guava"
     }
-    compileOnly 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
+    compileOnly 'org.bukkit:bukkit:1.13.2-R0.1-SNAPSHOT'
 }
 
 lombok {
