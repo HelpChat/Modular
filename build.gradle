@@ -17,6 +17,9 @@ repositories {
     maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots'
     }
+    maven {
+        url 'https://repo.piggypiglet.me/repository/maven-releases'
+    }
 }
 
 dependencies {
@@ -24,6 +27,10 @@ dependencies {
         exclude group: 'com.google.guava', module: "guava"
     }
     compileOnly 'org.bukkit:bukkit:1.13.2-R0.1-SNAPSHOT'
+    testCompile 'com.google:guiceberry:+'
+    testCompile 'com.google.guava:guava:+'
+    testCompile 'com.google.guava:guava-testlib:+'
+    testCompile 'junit:junit:4.12'
 }
 
 lombok {

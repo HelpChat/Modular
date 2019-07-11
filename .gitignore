@@ -1,7 +1,5 @@
 .gradle/
 .idea/
-*.iml
-src/test
 build/
 out/
 target/
