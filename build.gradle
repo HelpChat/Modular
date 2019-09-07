@@ -23,10 +23,10 @@ repositories {
 }
 
 dependencies {
-    compile('com.google.inject:guice:+') {
-        exclude group: 'com.google.guava', module: "guava"
-    }
-    compileOnly 'org.bukkit:bukkit:1.13.2-R0.1-SNAPSHOT'
+    compile 'me.piggypiglet:framework-bukkit:+'
+    compile 'me.piggypiglet:framework-jars:+'
+    compileOnly 'org.jetbrains:annotations:+'
+    compileOnly 'org.bukkit:bukkit:1.14.4-R0.1-SNAPSHOT'
     testCompile 'com.google:guiceberry:+'
     testCompile 'com.google.guava:guava:+'
     testCompile 'com.google.guava:guava-testlib:+'
@@ -51,6 +51,7 @@ shadowJar {
     exclude 'META-INF/*.SF'
     exclude 'META-INF/*.DSA'
     exclude 'META-INF/*.RSA'
+    relocate 'me.piggypiglet.framework', 'at.helpch.modular.framework'
 }
 
 compileJava.options.encoding = 'UTF-8'
